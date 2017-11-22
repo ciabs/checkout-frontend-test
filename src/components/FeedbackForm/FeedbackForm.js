@@ -19,22 +19,22 @@ class FeedbackForm extends Component {
 
     if (!rating || !name || !email || !comment) {
       alert('You must complete all the fields');
+    } else {
+      addNewFeedback({
+        name,
+        email,
+        rating,
+        comment,
+        timestamp: moment()
+      });
+
+      this.setState({
+        name: '',
+        email: '',
+        rating: '',
+        comment: ''
+      });
     }
-
-    addNewFeedback({
-      name,
-      email,
-      rating,
-      comment,
-      timestamp: moment()
-    });
-
-    this.setState({
-      name: '',
-      email: '',
-      rating: '',
-      comment: ''
-    });
   };
 
   handleChangeValue = event => {
@@ -44,31 +44,35 @@ class FeedbackForm extends Component {
   render() {
     const {rating, name, email, comment} = this.state;
 
-    console.log('this.state', this.state); //eslint-disable-line
-
     return (
       <Wrapper>
         <h2>Rate your experience</h2>
         <form>
+          <label htmlFor="name">Name</label>
           <input
-            type="text"
+            id="name"
             name="name"
+            type="text"
             placeholder="Name"
             value={name}
             onChange={this.handleChangeValue}
             required
           />
+          <label htmlFor="email">Email</label>
           <input
-            type="email"
+            id="email"
             name="email"
+            type="email"
             placeholder="Email"
             value={email}
             onChange={this.handleChangeValue}
             required
           />
+          <label htmlFor="rating">Rating</label>
           <select
-            value={rating}
+            id="rating"
             name="rating"
+            value={rating}
             onChange={this.handleChangeValue}
             required
           >
@@ -79,7 +83,9 @@ class FeedbackForm extends Component {
             <option value="4">4</option>
             <option value="5">5</option>
           </select>
+          <label htmlFor="comment">Comment</label>
           <textarea
+            id="comment"
             name="comment"
             value={comment}
             onChange={this.handleChangeValue}

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.main`
   text-align: center;
   margin: 15px auto;
-  background-color: blue;
   max-width: 1000px;
 `;
 

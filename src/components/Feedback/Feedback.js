@@ -24,7 +24,9 @@ class Feedback extends Component {
           <FeedbackForm
             addNewFeedback={this.handleAddNewFeedback}
           />
-          <Chart />
+          <Chart
+            feedbacks={feedbacks}
+          />
         </FirstRowStyled>
         <LatestComments
           comments={feedbacks}
