@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../App.css';
 import logo from '../../assets/images/logo.png';
 import {HeaderStyled} from './Header.style';
 

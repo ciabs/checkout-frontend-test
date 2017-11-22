@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import {Wrapper} from './FeedbackForm.style';
@@ -104,5 +105,9 @@ class FeedbackForm extends Component {
     );
   }
 }
+
+FeedbackForm.propTypes = {
+  addNewFeedback: PropTypes.func.isRequired
+};
 
 export default FeedbackForm;

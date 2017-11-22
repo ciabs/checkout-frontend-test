@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import {CommentStyled, Wrapper} from './LatestComments.style';
 
-const Chart = ({comments}) => (
+const LatestComments = ({comments}) => (
   <Wrapper>
     <h2>Latest comments</h2>
     {
@@ -24,4 +26,8 @@ const Chart = ({comments}) => (
   </Wrapper>
 );
 
-export default Chart;
+LatestComments.propTypes = {
+  comments: PropTypes.array.isRequired
+};
+
+export default LatestComments;

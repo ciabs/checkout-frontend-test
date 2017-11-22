@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
 
 import {Wrapper} from './Chart.style';
@@ -33,6 +34,10 @@ const Chart = ({feedbacks}) => {
       </BarChart>
     </Wrapper>
   );
+};
+
+Chart.propTypes = {
+  feedbacks: PropTypes.array.isRequired
 };
 
 export default Chart;
